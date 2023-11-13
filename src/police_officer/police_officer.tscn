@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://clwgcv0adx00p"]
+
+[node name="PoliceOfficer" type="Sprite2D"]
+position = Vector2(1, 0)
+offset = Vector2(-1, 0)
