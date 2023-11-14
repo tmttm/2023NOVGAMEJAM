@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://clwgcv0adx00p"]
+[gd_scene load_steps=3 format=3 uid="uid://clwgcv0adx00p"]
+
+[ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="1_b7wng"]
+[ext_resource type="Script" path="res://police_officer/police_officer.gd" id="2_bwqar"]
 
 [node name="PoliceOfficer" type="Sprite2D"]
-position = Vector2(1, 0)
-offset = Vector2(-1, 0)
+texture = ExtResource("1_b7wng")
+script = ExtResource("2_bwqar")

@@ -1,7 +1,5 @@
 extends Sprite2D
 
-var step = 12
-
 func input_direction():
 	var dir = Vector2.ZERO
 	

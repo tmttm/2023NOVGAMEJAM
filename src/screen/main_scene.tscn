@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=5 format=3 uid="uid://b75ctomlqpu57"]
 
-[ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="1_11s73"]
-[ext_resource type="Script" path="res://screen/Player.gd" id="2_tovik"]
-[ext_resource type="PackedScene" uid="uid://clwgcv0adx00p" path="res://police_officer/police_officer.tscn" id="3_8ui3n"]
+[ext_resource type="Script" path="res://screen/main_scene.gd" id="1_oyfnf"]
+[ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="1_p5m7a"]
+[ext_resource type="Script" path="res://screen/Player.gd" id="2_sjin8"]
+[ext_resource type="PackedScene" uid="uid://clwgcv0adx00p" path="res://police_officer/police_officer.tscn" id="3_6rrem"]
 
-[node name="main_scene" type="Node2D"]
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_oyfnf")
 
 [node name="Player" type="Sprite2D" parent="."]
-position = Vector2(65, 64)
-texture = ExtResource("1_11s73")
-script = ExtResource("2_tovik")
+position = Vector2(64, 64)
+texture = ExtResource("1_p5m7a")
+script = ExtResource("2_sjin8")
 
-[node name="PoliceOfficer" parent="." instance=ExtResource("3_8ui3n")]
+[node name="PoliceOfficer" parent="." instance=ExtResource("3_6rrem")]
+position = Vector2(64, 64)
