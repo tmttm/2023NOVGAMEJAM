@@ -1,5 +1,7 @@
 extends Sprite2D
 
+var is_turn = false;
+
 func input_direction():
 	var dir = Vector2.ZERO
 	
@@ -14,6 +16,20 @@ func input_direction():
 	
 	return dir
 	
-func _process(delta):
+func player_turn():
 	var dir = input_direction()
+	if dir == Vector2.ZERO:
+		return
+		
 	translate(dir * 128)
+	get_parent().emit_signal("next_state")
+
+func _process(delta):
+	if is_turn:
+		player_turn()	
+	
+func _on_main_scene_onchange_state(state):
+	if state == Constant.STATE_PLAYER:
+		is_turn = true
+	else:
+		is_turn = false
