@@ -1,33 +1,45 @@
 extends Node2D
 
-const INIT = 0
-const PLAYER = 1
-const POLICE = 2
-const RECOGNITION = 3
-const END = 4
+signal onchange_state(state: int)
+signal next_state
 
-var round = INIT
+var _state = Constant.STATE_INIT
 var game_end = false
 
-func _ready():
-	round = INIT
-
-func init_stage():
-	game_end = false
-	next_stage()
-
-func next_stage():
-	if self.round == INIT:
-		round = PLAYER
-	elif self.round == PLAYER:
-		round = POLICE
-	elif self.round == POLICE:
-		round = RECOGNITION
-	elif self.round == RECOGNITION:
-		if game_end:
-			round = END
-		else:
-			round = PLAYER
-	elif self.round == END:
-		round = INIT
+func _set(property, value):
+	if property == "state":
+		self._state = value
+		emit_signal("onchange_state", value)
 		
+func _ready():
+	self.set("state",Constant.STATE_INIT)
+	init_state()
+
+func init_state():
+	game_end = false
+	_next_state()
+
+func _next_state():
+	if self._state == Constant.STATE_INIT:
+		self.set("state", Constant.STATE_PLAYER)
+	elif self._state == Constant.STATE_PLAYER:
+		self.set("state", Constant.STATE_PRE_RECOGNITION)
+	elif self._state == Constant.STATE_PRE_RECOGNITION:
+		if game_end:
+			self.set("state", Constant.STATE_END)
+		else:
+			self.set("state", Constant.STATE_POLICE)
+	elif self._state == Constant.STATE_POLICE:
+		self.set("state", Constant.STATE_POST_RECOGNITION)
+	elif self._state == Constant.STATE_POST_RECOGNITION:
+		if game_end:
+			self.set("state", Constant.STATE_END)
+		else:
+			self.set("state", Constant.STATE_PLAYER)
+	elif self._state == Constant.STATE_END:
+		self.set("state", Constant.STATE_INIT)
+	else:
+		push_error("NON-ACCESIBLE STATE")
+
+func _on_next_state():
+	_next_state()

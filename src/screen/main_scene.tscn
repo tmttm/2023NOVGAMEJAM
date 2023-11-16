@@ -1,17 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=8 format=3 uid="uid://b75ctomlqpu57"]
 
 [ext_resource type="Script" path="res://screen/main_scene.gd" id="1_oyfnf"]
-[ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="1_p5m7a"]
-[ext_resource type="Script" path="res://screen/Player.gd" id="2_sjin8"]
+[ext_resource type="Texture2D" uid="uid://bxe44wsmpcgkv" path="res://player/normalplayerfront.png" id="2_4ge32"]
+[ext_resource type="Script" path="res://player/player.gd" id="3_3e38x"]
 [ext_resource type="PackedScene" uid="uid://clwgcv0adx00p" path="res://police_officer/police_officer.tscn" id="3_6rrem"]
+[ext_resource type="Script" path="res://police_officer/police_manager.gd" id="4_w02wh"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ypjj2"]
+scenes/1/scene = ExtResource("3_6rrem")
+
+[sub_resource type="TileSet" id="TileSet_25srq"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetScenesCollectionSource_ypjj2")
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_oyfnf")
 
 [node name="Player" type="Sprite2D" parent="."]
 position = Vector2(64, 64)
-texture = ExtResource("1_p5m7a")
-script = ExtResource("2_sjin8")
+texture = ExtResource("2_4ge32")
+script = ExtResource("3_3e38x")
 
-[node name="PoliceOfficer" parent="." instance=ExtResource("3_6rrem")]
-position = Vector2(64, 64)
+[node name="PoliceManager" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_25srq")
+format = 2
+layer_0/name = "Police"
+layer_0/tile_data = PackedInt32Array(131072, 1, 65536, 131073, 1, 65536, 131074, 1, 65536, 131075, 1, 65536, 131076, 1, 65536, 131077, 1, 65536, 131078, 1, 65536)
+script = ExtResource("4_w02wh")
+
+[connection signal="next_state" from="." to="." method="_on_next_state"]
+[connection signal="onchange_state" from="." to="Player" method="_on_main_scene_onchange_state"]
+[connection signal="onchange_state" from="." to="PoliceManager" method="_on_main_scene_onchange_state"]
+[connection signal="child_entered_tree" from="PoliceManager" to="PoliceManager" method="_on_child_entered_tree"]
