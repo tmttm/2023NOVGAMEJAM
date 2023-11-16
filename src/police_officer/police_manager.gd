@@ -26,7 +26,7 @@ func recognize():
 
 func move_polices():
 	print(polices)
-	# TODO move polices
+	# TODO: move polices
 
 
 func _on_child_entered_tree(node:Node2D):
