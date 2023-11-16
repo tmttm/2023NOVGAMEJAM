@@ -1,0 +1,8 @@
+extends Node
+
+const STATE_INIT = 0
+const STATE_PLAYER = 1
+const STATE_POLICE = 2
+const STATE_PRE_RECOGNITION = 3
+const STATE_POST_RECOGNITION = 4
+const STATE_END = 5
