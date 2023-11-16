@@ -10,17 +10,18 @@
 		{"id":"24ef959883020eea","type":"text","text":"턴 수 소모","x":312,"y":180,"width":148,"height":50},
 		{"id":"f268b6faceeaa73c","type":"text","text":"음모론자는 맵에 대한 턴 수와 포스터 할당량을 부여받는다","x":235,"y":60,"width":303,"height":62},
 		{"id":"707913d979930233","type":"text","text":"경찰이 한번 움직인다 ","x":960,"y":60,"width":213,"height":60},
-		{"id":"c37589de31650d7c","x":426,"y":920,"width":96,"height":60,"type":"text","text":"체포"},
-		{"id":"a99ff766b165e14a","x":349,"y":1140,"width":250,"height":60,"type":"text","text":"게임 종료"},
+		{"id":"c37589de31650d7c","type":"text","text":"체포","x":426,"y":920,"width":96,"height":60},
+		{"id":"a99ff766b165e14a","type":"text","text":"게임 종료","x":349,"y":1140,"width":250,"height":60},
 		{"id":"8b2bcae2d60ac609","type":"text","text":"경찰의 이동","x":393,"y":620,"width":157,"height":50},
-		{"id":"c30e5a92292dec72","x":954,"y":620,"width":98,"height":60,"type":"text","text":"발견"},
+		{"id":"c30e5a92292dec72","type":"text","text":"발견","x":954,"y":620,"width":98,"height":60},
 		{"id":"6041c0ca2df3ef77","type":"text","text":"좌/우 회전","x":1097,"y":720,"width":140,"height":60},
 		{"id":"92931c2b7d2c9e01","type":"text","text":"전진","x":1334,"y":818,"width":107,"height":60},
-		{"id":"d9e9f813a1521a03","x":987,"y":1140,"width":250,"height":60,"type":"text","text":"PLAYER"},
-		{"id":"741b06bd0afcf007","x":1372,"y":1140,"width":250,"height":60,"type":"text","text":"POLICE"},
-		{"id":"0ec6bc3c7974c91b","type":"text","text":"RECOGNITION","x":1372,"y":1330,"width":250,"height":60},
-		{"id":"5fd127fe4ac948fd","x":987,"y":950,"width":250,"height":60,"type":"text","text":"INIT"},
-		{"id":"5cf85f960b5566a8","x":1740,"y":1330,"width":250,"height":60,"type":"text","text":"END"}
+		{"id":"d9e9f813a1521a03","type":"text","text":"PLAYER","x":987,"y":1140,"width":250,"height":60},
+		{"id":"5fd127fe4ac948fd","type":"text","text":"INIT","x":987,"y":950,"width":250,"height":60},
+		{"id":"741b06bd0afcf007","type":"text","text":"POLICE","x":1622,"y":1140,"width":250,"height":60},
+		{"id":"5cf85f960b5566a8","type":"text","text":"END","x":2220,"y":1330,"width":250,"height":60},
+		{"id":"1ead764803e0a0ed","type":"text","text":"PRE_RECOGNITION","x":1316,"y":1140,"width":250,"height":60},
+		{"id":"0ec6bc3c7974c91b","type":"text","text":"POST_RECOGNITION","x":1622,"y":1440,"width":250,"height":60}
 	],
 	"edges":[
 		{"id":"919b3e67c58ffb90","fromNode":"d6891dab22f95a51","fromSide":"top","toNode":"58efad772c3a85f6","toSide":"top","label":"잡아야 한다 \n음모론자가 설치한 삐라를 떼야 한다\n가로등 아래에서만 음모론자를 볼 수 있다"},
@@ -42,11 +43,13 @@
 		{"id":"e76b179922ff7267","fromNode":"8b2bcae2d60ac609","fromSide":"right","toNode":"c30e5a92292dec72","toSide":"left","label":"플레이어가 빛에 노출됨"},
 		{"id":"f249048d7365426e","fromNode":"c30e5a92292dec72","fromSide":"top","toNode":"24ef959883020eea","toSide":"right"},
 		{"id":"3ffae8eb1b78e6e3","fromNode":"c30e5a92292dec72","fromSide":"top","toNode":"8b2bcae2d60ac609","toSide":"top","label":"타겟설정"},
-		{"id":"73fd498a61ecca6d","fromNode":"d9e9f813a1521a03","fromSide":"right","toNode":"741b06bd0afcf007","toSide":"left"},
 		{"id":"b48669f3b7a575fe","fromNode":"741b06bd0afcf007","fromSide":"bottom","toNode":"0ec6bc3c7974c91b","toSide":"top"},
 		{"id":"c0a4e0e920088fd8","fromNode":"0ec6bc3c7974c91b","fromSide":"left","toNode":"d9e9f813a1521a03","toSide":"bottom"},
 		{"id":"08ec16eac9a50622","fromNode":"5fd127fe4ac948fd","fromSide":"bottom","toNode":"d9e9f813a1521a03","toSide":"top"},
 		{"id":"edf291ed260518e5","fromNode":"0ec6bc3c7974c91b","fromSide":"right","toNode":"5cf85f960b5566a8","toSide":"left"},
-		{"id":"d6ed66176c2e7a5d","fromNode":"5cf85f960b5566a8","fromSide":"top","toNode":"5fd127fe4ac948fd","toSide":"right"}
+		{"id":"d6ed66176c2e7a5d","fromNode":"5cf85f960b5566a8","fromSide":"top","toNode":"5fd127fe4ac948fd","toSide":"right"},
+		{"id":"27b62aff2de3326a","fromNode":"d9e9f813a1521a03","fromSide":"right","toNode":"1ead764803e0a0ed","toSide":"left"},
+		{"id":"35b3cf347ff400e6","fromNode":"1ead764803e0a0ed","fromSide":"right","toNode":"741b06bd0afcf007","toSide":"left"},
+		{"id":"3380eaabc4f7a3c6","fromNode":"1ead764803e0a0ed","fromSide":"bottom","toNode":"5cf85f960b5566a8","toSide":"left"}
 	]
 }
