@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="1_b7wng"]
 [ext_resource type="Script" path="res://police_officer/police_officer.gd" id="2_bwqar"]
 
-[node name="PoliceOfficer" type="Sprite2D"]
-texture = ExtResource("1_b7wng")
+[node name="PoliceOfficer" type="Node2D"]
 script = ExtResource("2_bwqar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b7wng")
