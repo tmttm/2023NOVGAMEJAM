@@ -1,10 +1,63 @@
-[gd_scene load_steps=8 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=13 format=3 uid="uid://b75ctomlqpu57"]
 
 [ext_resource type="Script" path="res://screen/main_scene.gd" id="1_oyfnf"]
-[ext_resource type="Texture2D" uid="uid://bxe44wsmpcgkv" path="res://player/normalplayerfront.png" id="2_4ge32"]
 [ext_resource type="Script" path="res://player/player.gd" id="3_3e38x"]
 [ext_resource type="PackedScene" uid="uid://clwgcv0adx00p" path="res://police_officer/police_officer.tscn" id="3_6rrem"]
+[ext_resource type="Texture2D" uid="uid://kemq5qqf8oew" path="res://player/movingplayer.png" id="4_eoxko"]
+[ext_resource type="Texture2D" uid="uid://djtfr55ifv81o" path="res://player/normalplayerback.png" id="4_mga4e"]
 [ext_resource type="Script" path="res://police_officer/police_manager.gd" id="4_w02wh"]
+
+[sub_resource type="Animation" id="Animation_usqjc"]
+resource_name = "side"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_mga4e")]
+}
+
+[sub_resource type="Animation" id="Animation_1ju2f"]
+resource_name = "back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_mga4e")]
+}
+
+[sub_resource type="Animation" id="Animation_2eqex"]
+resource_name = "walking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_eoxko")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmv6l"]
+_data = {
+"back": SubResource("Animation_1ju2f"),
+"side": SubResource("Animation_usqjc"),
+"walking": SubResource("Animation_2eqex")
+}
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ypjj2"]
 scenes/1/scene = ExtResource("3_6rrem")
@@ -13,22 +66,37 @@ scenes/1/scene = ExtResource("3_6rrem")
 tile_size = Vector2i(128, 128)
 sources/1 = SubResource("TileSetScenesCollectionSource_ypjj2")
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_oyfnf")
 
 [node name="Player" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(64, 64)
-texture = ExtResource("2_4ge32")
+texture = ExtResource("4_eoxko")
 script = ExtResource("3_3e38x")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_vmv6l")
+}
+
 [node name="PoliceManager" type="TileMap" parent="."]
+unique_name_in_owner = true
 tile_set = SubResource("TileSet_25srq")
 format = 2
 layer_0/name = "Police"
 layer_0/tile_data = PackedInt32Array(131072, 1, 65536, 131073, 1, 65536, 131074, 1, 65536, 131075, 1, 65536, 131076, 1, 65536, 131077, 1, 65536, 131078, 1, 65536)
 script = ExtResource("4_w02wh")
 
+[connection signal="gameend" from="." to="." method="_on_gameend"]
 [connection signal="next_state" from="." to="." method="_on_next_state"]
 [connection signal="onchange_state" from="." to="Player" method="_on_main_scene_onchange_state"]
 [connection signal="onchange_state" from="." to="PoliceManager" method="_on_main_scene_onchange_state"]
+[connection signal="onchange_state" from="." to="." method="_on_onchange_state"]
 [connection signal="child_entered_tree" from="PoliceManager" to="PoliceManager" method="_on_child_entered_tree"]

@@ -1,7 +1,8 @@
-extends Node2D
+extends Control
 
 signal onchange_state(state: int)
 signal next_state
+signal gameend
 
 var _state = Constant.STATE_INIT
 var game_end = false
@@ -43,3 +44,10 @@ func _next_state():
 
 func _on_next_state():
 	_next_state()
+
+func _on_gameend():
+	game_end = true
+
+func _on_onchange_state(state):
+	if state == Constant.STATE_END:
+		pass

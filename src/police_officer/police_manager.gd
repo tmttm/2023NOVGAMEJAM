@@ -4,7 +4,7 @@ var PoliceClass = load("res://police_officer/police_officer.gd")
 
 const POLICE_LAYER = 0
 
-var player = null
+@onready var player = $%Player 
 var polices = []
 
 var rng = RandomNumberGenerator.new()
@@ -30,11 +30,17 @@ func init_polices():
 	
 func recognize():
 	# TODO: is in light in player
+	for p in polices:
+		var player_pos = player.get_map_position()
+		var police_pos = p.get_front_pos(self)
+		
+		if player_pos == police_pos:
+			_game_over()
+			break
 	_next_stage()
 
 func move_polices():
 	for p in polices:
-		# print(p)
 		var _max = 2 if not p.is_obstacle_in_front(self) else 1
 		var idx = rng.randi_range(0,_max)
 		
@@ -62,5 +68,10 @@ func _on_child_entered_tree(node:Node2D):
 		polices.append(node)
 		tiles.append(local_to_map(node.position))
 
+func _game_over():
+	get_parent().emit_signal("gameend")
+
 func _next_stage():
 	get_parent().emit_signal("next_state")
+
+
