@@ -3,3 +3,4 @@
 .vscode
 assets/*.import
 *.tmp
+.DS_Store
