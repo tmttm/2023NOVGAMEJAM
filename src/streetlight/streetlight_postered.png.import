@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xct4rmjcjfy7"
-path="res://.godot/imported/streetlightbasic.png-b587caa5690e3d63d5f3569c706e48d6.ctex"
+uid="uid://cnk3q6foq6jvh"
+path="res://.godot/imported/streetlight_postered.png-8e3b15fe9d8ee2cbe830494098f1f1bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://street_light/streetlightbasic.png"
-dest_files=["res://.godot/imported/streetlightbasic.png-b587caa5690e3d63d5f3569c706e48d6.ctex"]
+source_file="res://streetlight/streetlight_postered.png"
+dest_files=["res://.godot/imported/streetlight_postered.png-8e3b15fe9d8ee2cbe830494098f1f1bd.ctex"]
 
 [params]
 
