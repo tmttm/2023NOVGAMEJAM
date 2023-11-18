@@ -26,4 +26,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "START GAME"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
