@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ivi4eilbrlay"]
+[gd_scene load_steps=3 format=3 uid="uid://ivi4eilbrlay"]
 
 [ext_resource type="Script" path="res://screen/start_scene.gd" id="1_h3qf3"]
+[ext_resource type="Texture2D" uid="uid://7r4n5jw767de" path="res://screen/startscene.png" id="2_3kbki"]
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -11,24 +12,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h3qf3")
 
-[node name="Button" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -15.5
-offset_right = 53.0
-offset_bottom = 15.5
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.151917
+texture = ExtResource("2_3kbki")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275
+anchor_top = 0.807
+anchor_right = 0.455
+anchor_bottom = 0.915
+offset_left = 0.474993
+offset_top = 0.0639734
+offset_right = 0.114931
+offset_bottom = 0.0799861
 grow_horizontal = 2
 grow_vertical = 2
-text = "START GAME"
+text = "
+"
+flat = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
