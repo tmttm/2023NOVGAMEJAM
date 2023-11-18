@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://clwgcv0adx00p"]
 
 [ext_resource type="Script" path="res://scripts/police_officer.gd" id="1_n0pod"]
-[ext_resource type="Texture2D" uid="uid://bbt7ol3a0negx" path="res://police_officer/normalpolicefront.png" id="2_0dsfb"]
-[ext_resource type="Texture2D" uid="uid://d3sfvtob3apgn" path="res://police_officer/normalpoliceback.png" id="2_0hpei"]
+[ext_resource type="Texture2D" uid="uid://bbt7ol3a0negx" path="res://police_officer/police_front.png" id="2_0dsfb"]
+[ext_resource type="Texture2D" uid="uid://d3sfvtob3apgn" path="res://police_officer/police_back.png" id="2_0hpei"]
 [ext_resource type="Texture2D" uid="uid://c4nhni5ruufv5" path="res://police_officer/light/policelightleft.png" id="2_k6pbr"]
 [ext_resource type="Texture2D" uid="uid://b083bpkajrq04" path="res://police_officer/light/policelightmiddle.png" id="3_k07rp"]
 [ext_resource type="Texture2D" uid="uid://gxhlwijwboou" path="res://police_officer/light/policelightright.png" id="4_qkjbx"]
-[ext_resource type="Texture2D" uid="uid://c8mfb1rafonn7" path="res://police_officer/normalpoliceside.png" id="7_c3t6f"]
+[ext_resource type="Texture2D" uid="uid://c8mfb1rafonn7" path="res://police_officer/police_side.png" id="7_c3t6f"]
 [ext_resource type="Texture2D" uid="uid://fja662o7egvu" path="res://police_officer/exclaim.png" id="8_ju2vn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5fl6"]

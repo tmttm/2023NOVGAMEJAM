@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5yoljgex3swj"]
+[gd_scene load_steps=3 format=3 uid="uid://dk65q4jlhxnl7"]
 
 [ext_resource type="Script" path="res://scripts/screen/start_scene.gd" id="1_xmddq"]
-[ext_resource type="Texture2D" uid="uid://dqf80piscx48e" path="res://screen/startscene.png" id="2_isqo1"]
+[ext_resource type="Texture2D" uid="uid://dqf80piscx48e" path="res://screen/start_scene.png" id="2_k8qly"]
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -18,7 +18,7 @@ anchors_preset = -1
 anchor_right = 0.999
 anchor_bottom = 1.0
 offset_right = 0.151917
-texture = ExtResource("2_isqo1")
+texture = ExtResource("2_k8qly")
 expand_mode = 2
 
 [node name="Button" type="Button" parent="TextureRect"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqf80piscx48e"
-path="res://.godot/imported/startscene.png-9effcb78b5047ba14765869e3b08e211.ctex"
+uid="uid://bbt7ol3a0negx"
+path="res://.godot/imported/police_front.png-7f7214bc94421d7ff891e6b3c65f416d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screen/startscene.png"
-dest_files=["res://.godot/imported/startscene.png-9effcb78b5047ba14765869e3b08e211.ctex"]
+source_file="res://police_officer/police_front.png"
+dest_files=["res://.godot/imported/police_front.png-7f7214bc94421d7ff891e6b3c65f416d.ctex"]
 
 [params]
 
