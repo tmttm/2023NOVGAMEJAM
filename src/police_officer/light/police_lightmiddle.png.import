@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4nhni5ruufv5"
-path="res://.godot/imported/policelightleft.png-8d1a8b718666e554d78e2e6af7aac8e8.ctex"
+uid="uid://b083bpkajrq04"
+path="res://.godot/imported/police_lightmiddle.png-cb061d6a46b08f57f4f8fc1e0e2b8109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://police_officer/light/policelightleft.png"
-dest_files=["res://.godot/imported/policelightleft.png-8d1a8b718666e554d78e2e6af7aac8e8.ctex"]
+source_file="res://police_officer/light/police_lightmiddle.png"
+dest_files=["res://.godot/imported/police_lightmiddle.png-cb061d6a46b08f57f4f8fc1e0e2b8109.ctex"]
 
 [params]
 
