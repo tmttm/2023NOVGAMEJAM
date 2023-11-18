@@ -1,16 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=12 format=3 uid="uid://b75ctomlqpu57"]
 
-[ext_resource type="Script" path="res://screen/main_scene.gd" id="1_oyfnf"]
+[ext_resource type="Script" path="res://scripts/screen/main_scene.gd" id="1_fok40"]
 [ext_resource type="PackedScene" uid="uid://b3puujsn6r2u1" path="res://player/player.tscn" id="2_vlods"]
 [ext_resource type="PackedScene" uid="uid://clwgcv0adx00p" path="res://police_officer/police_officer.tscn" id="3_6rrem"]
-[ext_resource type="Script" path="res://police_officer/police_manager.gd" id="4_w02wh"]
+[ext_resource type="Script" path="res://scripts/police_manager.gd" id="4_dr2f0"]
+[ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="4_kyi7e"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ypjj2"]
 scenes/1/scene = ExtResource("3_6rrem")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xj2m"]
+texture = ExtResource("4_kyi7e")
+texture_region_size = Vector2i(128, 128)
+use_texture_padding = false
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_25srq"]
 tile_size = Vector2i(128, 128)
 sources/1 = SubResource("TileSetScenesCollectionSource_ypjj2")
+sources/2 = SubResource("TileSetAtlasSource_4xj2m")
 
 [sub_resource type="Theme" id="Theme_k4i23"]
 
@@ -30,7 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_oyfnf")
+script = ExtResource("1_fok40")
 
 [node name="Player" parent="." instance=ExtResource("2_vlods")]
 unique_name_in_owner = true
@@ -41,8 +49,15 @@ unique_name_in_owner = true
 tile_set = SubResource("TileSet_25srq")
 format = 2
 layer_0/name = "Police"
-layer_0/tile_data = PackedInt32Array(262147, 1, 65536, 131077, 1, 65536, 7, 1, 65536)
-script = ExtResource("4_w02wh")
+layer_0/tile_data = PackedInt32Array(7, 1, 65536)
+layer_1/name = "Outline"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327680, 2, 0, 393215, 2, 0, 327679, 2, 0, 262143, 2, 0, 196607, 2, 0, 131071, 2, 0, 65535, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, 12, 2, 0, 65548, 2, 0, 131084, 2, 0, 196620, 2, 0, 262156, 2, 0, 327692, 2, 0, 327691, 2, 0, 327690, 2, 0, 327689, 2, 0, 327688, 2, 0)
+script = ExtResource("4_dr2f0")
 
 [node name="GameoverPanel" type="Panel" parent="."]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ivi4eilbrlay"]
+[gd_scene load_steps=3 format=3 uid="uid://c06ja0yvke7q7"]
 
-[ext_resource type="Script" path="res://screen/start_scene.gd" id="1_h3qf3"]
-[ext_resource type="Texture2D" uid="uid://dqf80piscx48e" path="res://screen/startscene copy.png" id="2_jvpmb"]
+[ext_resource type="Script" path="res://scripts/screen/start_scene.gd" id="1_xmddq"]
+[ext_resource type="Texture2D" uid="uid://dqf80piscx48e" path="res://screen/startscene.png" id="2_isqo1"]
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h3qf3")
+script = ExtResource("1_xmddq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -18,7 +18,7 @@ anchors_preset = -1
 anchor_right = 0.999
 anchor_bottom = 1.0
 offset_right = 0.151917
-texture = ExtResource("2_jvpmb")
+texture = ExtResource("2_isqo1")
 expand_mode = 2
 
 [node name="Button" type="Button" parent="TextureRect"]
