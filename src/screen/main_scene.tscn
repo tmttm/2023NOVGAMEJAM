@@ -1,13 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=15 format=3 uid="uid://b75ctomlqpu57"]
 
 [ext_resource type="Script" path="res://scripts/screen/main_scene.gd" id="1_fok40"]
 [ext_resource type="PackedScene" uid="uid://b3puujsn6r2u1" path="res://player/player.tscn" id="2_vlods"]
 [ext_resource type="PackedScene" uid="uid://clwgcv0adx00p" path="res://police_officer/police_officer.tscn" id="3_6rrem"]
+[ext_resource type="PackedScene" uid="uid://tqmblg8ssyq7" path="res://streetlight/streetlight.tscn" id="4_3b6o2"]
 [ext_resource type="Script" path="res://scripts/police_manager.gd" id="4_dr2f0"]
 [ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="4_kyi7e"]
+[ext_resource type="Script" path="res://scripts/screen/ui/turn.gd" id="7_d8kai"]
+[ext_resource type="Script" path="res://scripts/screen/ui/poster.gd" id="8_yv12t"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ypjj2"]
 scenes/1/scene = ExtResource("3_6rrem")
+scenes/2/scene = ExtResource("4_3b6o2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xj2m"]
 texture = ExtResource("4_kyi7e")
@@ -49,7 +53,7 @@ unique_name_in_owner = true
 tile_set = SubResource("TileSet_25srq")
 format = 2
 layer_0/name = "Police"
-layer_0/tile_data = PackedInt32Array(7, 1, 65536)
+layer_0/tile_data = PackedInt32Array(7, 1, 65536, 196615, 1, 131072, 196608, 1, 131072)
 layer_1/name = "Outline"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -58,6 +62,20 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327680, 2, 0, 393215, 2, 0, 327679, 2, 0, 262143, 2, 0, 196607, 2, 0, 131071, 2, 0, 65535, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, 12, 2, 0, 65548, 2, 0, 131084, 2, 0, 196620, 2, 0, 262156, 2, 0, 327692, 2, 0, 327691, 2, 0, 327690, 2, 0, 327689, 2, 0, 327688, 2, 0)
 script = ExtResource("4_dr2f0")
+
+[node name="Turn" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("7_d8kai")
+
+[node name="Poster" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 42.0
+offset_bottom = 71.0
+script = ExtResource("8_yv12t")
 
 [node name="GameoverPanel" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -84,7 +102,11 @@ horizontal_alignment = 1
 
 [connection signal="gameend" from="." to="." method="_on_gameend"]
 [connection signal="next_state" from="." to="." method="_on_next_state"]
+[connection signal="onchange_poster" from="." to="Poster" method="_on_main_scene_onchange_poster"]
 [connection signal="onchange_state" from="." to="." method="_on_onchange_state"]
 [connection signal="onchange_state" from="." to="Player" method="_on_main_scene_onchange_state"]
 [connection signal="onchange_state" from="." to="PoliceManager" method="_on_main_scene_onchange_state"]
+[connection signal="onchange_turn" from="." to="Turn" method="_on_main_scene_onchange_turn"]
+[connection signal="posting" from="Player" to="." method="_on_player_posting"]
 [connection signal="child_entered_tree" from="PoliceManager" to="PoliceManager" method="_on_child_entered_tree"]
+[connection signal="onadd_streetlights" from="PoliceManager" to="." method="_on_police_manager_onadd_streetlights"]
