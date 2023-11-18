@@ -6,6 +6,7 @@ signal gameend
 
 var _state = Constant.STATE_INIT
 var game_end = false
+@onready var gameover_panel:Panel = $%GameoverPanel
 
 func _set(property, value):
 	if property == "state":
@@ -50,4 +51,4 @@ func _on_gameend():
 
 func _on_onchange_state(state):
 	if state == Constant.STATE_END:
-		pass
+		gameover_panel.visible = true

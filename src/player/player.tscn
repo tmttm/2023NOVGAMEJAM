@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3puujsn6r2u1"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_outca"]
+[ext_resource type="Texture2D" uid="uid://djtfr55ifv81o" path="res://player/normalplayerback.png" id="2_eknpw"]
+[ext_resource type="Texture2D" uid="uid://kemq5qqf8oew" path="res://player/movingplayer.png" id="3_c507g"]
+
+[sub_resource type="Animation" id="Animation_1ju2f"]
+resource_name = "back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_eknpw")]
+}
+
+[sub_resource type="Animation" id="Animation_usqjc"]
+resource_name = "side"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_eknpw")]
+}
+
+[sub_resource type="Animation" id="Animation_2eqex"]
+resource_name = "walking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_c507g")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmv6l"]
+_data = {
+"back": SubResource("Animation_1ju2f"),
+"side": SubResource("Animation_usqjc"),
+"walking": SubResource("Animation_2eqex")
+}
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_outca")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_eknpw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_vmv6l")
+}

@@ -1,7 +1,10 @@
-extends Sprite2D
+extends Node2D
 
-var is_turn = false;
+var is_turn = false
+var is_moving = false
+
 @onready var tile_map = $%PoliceManager
+@onready var sprite = $Sprite
 
 func input_direction():
 	var dir = Vector2i.ZERO
@@ -22,11 +25,30 @@ func player_turn():
 	if dir == Vector2i.ZERO:
 		return
 	var cur_map_pos = get_map_position()
-
-	if not is_obstacle(cur_map_pos + dir):
-		translate(dir * 128)
 	
+	if not is_obstacle(cur_map_pos + dir):
+		move(dir)
+
 	_next_stage()
+
+func _physics_process(delta):
+	if is_moving  == false:
+		return
+		
+	if global_position == sprite.global_position:
+		is_moving = false
+		return
+			
+	sprite.global_position = sprite.global_position.move_toward(global_position, 16)
+
+func move(dir):
+	var map_pos = tile_map.local_to_map(self.position)
+	var next_pos = map_pos + dir
+
+	is_moving = true
+
+	self.global_position = tile_map.map_to_local(next_pos)
+	sprite.global_position = tile_map.map_to_local(map_pos)
 
 func _process(delta):
 	if is_turn:
@@ -35,13 +57,6 @@ func _process(delta):
 func _next_stage():
 	get_parent().emit_signal("next_state")
 
-
-func _on_main_scene_onchange_state(state):
-	if state == Constant.STATE_PLAYER:
-		is_turn = true
-	else:
-		is_turn = false
-
 func get_map_position():
 	var map_pos = tile_map.local_to_map(self.position)
 	return map_pos
@@ -49,3 +64,10 @@ func get_map_position():
 func is_obstacle(pos: Vector2i):
 	return tile_map.is_occupied(pos)
 
+
+func _on_main_scene_onchange_state(state):
+	print(state)
+	if state == Constant.STATE_PLAYER:
+		is_turn = true
+	else:
+		is_turn = false
