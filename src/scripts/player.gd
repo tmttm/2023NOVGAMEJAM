@@ -1,5 +1,7 @@
 extends Node2D
 
+signal posting
+
 var is_turn = false
 var is_moving = false
 
@@ -7,6 +9,9 @@ var is_moving = false
 @onready var sprite = $Sprite
 @onready var animation_player = $AnimationPlayer
 var prev_dir = Vector2i.DOWN
+
+const low = Color("#707070")
+const high = Color("#ffffff")
 
 func input_direction():
 	var dir = Vector2i.ZERO
@@ -19,20 +24,31 @@ func input_direction():
 		dir = Vector2i.LEFT
 	if Input.is_action_just_pressed("right"):
 		dir = Vector2i.RIGHT
-	
+
 	return dir
 	
 func player_turn():
-	var dir = input_direction()
-	if dir == Vector2i.ZERO:
-		return
-	prev_dir = dir
 	var cur_map_pos = get_map_position()
-	
-	if not is_obstacle(cur_map_pos + dir):
-		move(dir)
-	
 
+	var dir = input_direction()
+	var post = Input.is_action_just_pressed("post")
+
+	if dir == Vector2i.ZERO and not post:
+		return
+
+	if post:
+		var front = cur_map_pos + prev_dir
+		var sl = tile_map.get_streetlight(front)
+		if sl:
+			sl.post()
+			emit_signal("posting")
+
+	else:
+		prev_dir = dir
+	
+		if not is_obstacle(cur_map_pos + dir):
+			move(dir)
+	
 	_next_stage()
 
 func animate_non_moving():
@@ -67,19 +83,26 @@ func move(dir):
 
 func _process(delta):
 	if is_turn:
-		player_turn()	
-			
+		player_turn()
+	
+func brightness():
+	if tile_map.is_player_in_lights():
+		modulate = high
+	else:
+		modulate = low
+		
 func _next_stage():
 	get_parent().emit_signal("next_state")
-
+			
 func get_map_position():
 	var map_pos = tile_map.local_to_map(self.position)
 	return map_pos
-
+	
 func is_obstacle(pos: Vector2i):
 	return tile_map.is_occupied(pos)
-
+	
 func _on_main_scene_onchange_state(state):
+	brightness()
 	if state == Constant.STATE_PLAYER:
 		is_turn = true
 	else:
