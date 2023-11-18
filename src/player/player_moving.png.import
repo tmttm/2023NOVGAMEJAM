@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxe44wsmpcgkv"
-path="res://.godot/imported/normalplayerfront.png-4608185f761c19f05085c57d0941fc87.ctex"
+uid="uid://kemq5qqf8oew"
+path="res://.godot/imported/player_moving.png-b44a7210f1e485501ad6b80405b67d30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/normalplayerfront.png"
-dest_files=["res://.godot/imported/normalplayerfront.png-4608185f761c19f05085c57d0941fc87.ctex"]
+source_file="res://player/player_moving.png"
+dest_files=["res://.godot/imported/player_moving.png-b44a7210f1e485501ad6b80405b67d30.ctex"]
 
 [params]
 

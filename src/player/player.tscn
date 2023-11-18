@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://b3puujsn6r2u1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1r5x7"]
-[ext_resource type="Texture2D" uid="uid://bxe44wsmpcgkv" path="res://player/normalplayerfront.png" id="2_6bwaw"]
-[ext_resource type="Texture2D" uid="uid://djtfr55ifv81o" path="res://player/normalplayerback.png" id="2_eknpw"]
-[ext_resource type="Texture2D" uid="uid://cdmxvlaqs7mwh" path="res://player/normalplayerside.png" id="3_3bu02"]
-[ext_resource type="Texture2D" uid="uid://kemq5qqf8oew" path="res://player/movingplayer.png" id="3_c507g"]
+[ext_resource type="Texture2D" uid="uid://bxe44wsmpcgkv" path="res://player/player_front.png" id="2_6bwaw"]
+[ext_resource type="Texture2D" uid="uid://djtfr55ifv81o" path="res://player/player_back.png" id="2_eknpw"]
+[ext_resource type="Texture2D" uid="uid://cdmxvlaqs7mwh" path="res://player/player_side.png" id="3_3bu02"]
+[ext_resource type="Texture2D" uid="uid://kemq5qqf8oew" path="res://player/player_moving.png" id="3_c507g"]
 
 [sub_resource type="Animation" id="Animation_usqjc"]
 resource_name = "side"
