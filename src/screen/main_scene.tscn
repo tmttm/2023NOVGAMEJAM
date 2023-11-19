@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=20 format=3 uid="uid://b75ctomlqpu57"]
 
 [ext_resource type="Script" path="res://scripts/screen/main_scene.gd" id="1_fok40"]
 [ext_resource type="PackedScene" uid="uid://b3puujsn6r2u1" path="res://player/player.tscn" id="2_vlods"]
@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="4_kyi7e"]
 [ext_resource type="Texture2D" uid="uid://sh3u776wnqcs" path="res://map/road_sheet.png" id="6_ammkd"]
 [ext_resource type="Script" path="res://scripts/screen/ui/turn.gd" id="7_d8kai"]
+[ext_resource type="Texture2D" uid="uid://knl5jik4jeq5" path="res://screen/town_detail.png" id="8_ai5jd"]
 [ext_resource type="Script" path="res://scripts/screen/ui/poster.gd" id="8_yv12t"]
 [ext_resource type="Texture2D" uid="uid://ovurub75dth0" path="res://screen/fail_scene.png" id="10_vfj1x"]
+[ext_resource type="Texture2D" uid="uid://blr1c1fr4t2oj" path="res://screen/newspaper.png" id="11_kumis"]
 [ext_resource type="Texture2D" uid="uid://bp1b7cyw2xifp" path="res://screen/clear_scene.png" id="11_odxd8"]
+[ext_resource type="Texture2D" uid="uid://bvkmbv4w5djqu" path="res://screen/poster_left.png" id="13_ulu5j"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ypjj2"]
 scenes/1/scene = ExtResource("3_6rrem")
@@ -22,47 +25,320 @@ texture_region_size = Vector2i(128, 128)
 use_texture_padding = false
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t74ti"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1cx70"]
 texture = ExtResource("6_ammkd")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 1
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/terrains_peering_bit/bottom_right_corner = 1
+0:0/0/terrains_peering_bit/bottom_side = 1
+0:0/0/terrains_peering_bit/bottom_left_corner = 1
+0:0/0/terrains_peering_bit/left_side = 1
+0:0/0/terrains_peering_bit/top_left_corner = 1
+0:0/0/terrains_peering_bit/top_side = 1
+0:0/0/terrains_peering_bit/top_right_corner = 1
 1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 1
+1:0/0/terrains_peering_bit/right_side = 1
+1:0/0/terrains_peering_bit/bottom_right_corner = 1
+1:0/0/terrains_peering_bit/bottom_side = 1
+1:0/0/terrains_peering_bit/bottom_left_corner = 1
+1:0/0/terrains_peering_bit/left_side = 1
+1:0/0/terrains_peering_bit/top_left_corner = 1
+1:0/0/terrains_peering_bit/top_side = 1
+1:0/0/terrains_peering_bit/top_right_corner = 1
 2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/right_side = 1
+2:0/0/terrains_peering_bit/bottom_right_corner = 1
+2:0/0/terrains_peering_bit/bottom_side = 1
+2:0/0/terrains_peering_bit/bottom_left_corner = 1
+2:0/0/terrains_peering_bit/left_side = 1
+2:0/0/terrains_peering_bit/top_left_corner = 1
+2:0/0/terrains_peering_bit/top_side = 1
+2:0/0/terrains_peering_bit/top_right_corner = 1
 3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 1
+3:0/0/terrains_peering_bit/right_side = 1
+3:0/0/terrains_peering_bit/bottom_right_corner = 1
+3:0/0/terrains_peering_bit/bottom_side = 1
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/0/terrains_peering_bit/left_side = 0
+3:0/0/terrains_peering_bit/top_left_corner = 0
+3:0/0/terrains_peering_bit/top_side = 0
+3:0/0/terrains_peering_bit/top_right_corner = 0
 4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 1
+4:0/0/terrains_peering_bit/right_side = 1
+4:0/0/terrains_peering_bit/bottom_right_corner = 1
+4:0/0/terrains_peering_bit/bottom_side = 1
+4:0/0/terrains_peering_bit/bottom_left_corner = 1
+4:0/0/terrains_peering_bit/left_side = 1
+4:0/0/terrains_peering_bit/top_left_corner = 0
+4:0/0/terrains_peering_bit/top_side = 0
+4:0/0/terrains_peering_bit/top_right_corner = 0
 5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 1
+5:0/0/terrains_peering_bit/right_side = 0
+5:0/0/terrains_peering_bit/bottom_right_corner = 0
+5:0/0/terrains_peering_bit/bottom_side = 1
+5:0/0/terrains_peering_bit/bottom_left_corner = 1
+5:0/0/terrains_peering_bit/left_side = 1
+5:0/0/terrains_peering_bit/top_left_corner = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:0/0/terrains_peering_bit/top_right_corner = 0
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrain = 0
+6:0/0/terrains_peering_bit/right_side = 0
+6:0/0/terrains_peering_bit/bottom_right_corner = 0
+6:0/0/terrains_peering_bit/bottom_side = 0
+6:0/0/terrains_peering_bit/bottom_left_corner = 1
+6:0/0/terrains_peering_bit/left_side = 1
+6:0/0/terrains_peering_bit/top_left_corner = 1
+6:0/0/terrains_peering_bit/top_side = 1
+6:0/0/terrains_peering_bit/top_right_corner = 1
+8:0/0 = 0
+8:0/0/terrain_set = 0
+8:0/0/terrain = 0
+8:0/0/terrains_peering_bit/right_side = 1
+8:0/0/terrains_peering_bit/bottom_right_corner = 1
+8:0/0/terrains_peering_bit/bottom_side = 0
+8:0/0/terrains_peering_bit/bottom_left_corner = 0
+8:0/0/terrains_peering_bit/left_side = 0
+8:0/0/terrains_peering_bit/top_left_corner = 1
+8:0/0/terrains_peering_bit/top_side = 1
+8:0/0/terrains_peering_bit/top_right_corner = 1
 0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 1
+0:1/0/terrains_peering_bit/right_side = 1
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0/terrains_peering_bit/left_side = 1
+0:1/0/terrains_peering_bit/top_left_corner = 1
+0:1/0/terrains_peering_bit/top_side = 1
+0:1/0/terrains_peering_bit/top_right_corner = 1
 1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 1
+1:1/0/terrains_peering_bit/right_side = 1
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 1
+1:1/0/terrains_peering_bit/top_left_corner = 1
+1:1/0/terrains_peering_bit/top_side = 1
+1:1/0/terrains_peering_bit/top_right_corner = 1
 2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 1
+2:1/0/terrains_peering_bit/right_side = 1
+2:1/0/terrains_peering_bit/bottom_right_corner = 1
+2:1/0/terrains_peering_bit/bottom_side = 1
+2:1/0/terrains_peering_bit/bottom_left_corner = 1
+2:1/0/terrains_peering_bit/left_side = 1
+2:1/0/terrains_peering_bit/top_left_corner = 1
+2:1/0/terrains_peering_bit/top_side = 1
+2:1/0/terrains_peering_bit/top_right_corner = 1
 3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 1
+3:1/0/terrains_peering_bit/right_side = 1
+3:1/0/terrains_peering_bit/bottom_right_corner = 1
+3:1/0/terrains_peering_bit/bottom_side = 1
+3:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0/terrains_peering_bit/left_side = 0
+3:1/0/terrains_peering_bit/top_left_corner = 0
+3:1/0/terrains_peering_bit/top_side = 1
+3:1/0/terrains_peering_bit/top_right_corner = 1
 4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 1
+4:1/0/terrains_peering_bit/right_side = 1
+4:1/0/terrains_peering_bit/bottom_right_corner = 1
+4:1/0/terrains_peering_bit/bottom_side = 1
+4:1/0/terrains_peering_bit/bottom_left_corner = 1
+4:1/0/terrains_peering_bit/left_side = 1
+4:1/0/terrains_peering_bit/top_left_corner = 1
+4:1/0/terrains_peering_bit/top_side = 1
+4:1/0/terrains_peering_bit/top_right_corner = 1
 5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 1
+5:1/0/terrains_peering_bit/right_side = 0
+5:1/0/terrains_peering_bit/bottom_right_corner = 0
+5:1/0/terrains_peering_bit/bottom_side = 1
+5:1/0/terrains_peering_bit/bottom_left_corner = 1
+5:1/0/terrains_peering_bit/left_side = 1
+5:1/0/terrains_peering_bit/top_left_corner = 1
+5:1/0/terrains_peering_bit/top_side = 1
+5:1/0/terrains_peering_bit/top_right_corner = 0
+7:1/0 = 0
+7:1/0/terrain_set = 0
+7:1/0/terrain = 0
+7:1/0/terrains_peering_bit/right_side = 0
+7:1/0/terrains_peering_bit/bottom_right_corner = 0
+7:1/0/terrains_peering_bit/bottom_side = 0
+7:1/0/terrains_peering_bit/bottom_left_corner = 0
+7:1/0/terrains_peering_bit/left_side = 0
+7:1/0/terrains_peering_bit/top_left_corner = 0
+7:1/0/terrains_peering_bit/top_side = 0
+7:1/0/terrains_peering_bit/top_right_corner = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/bottom_right_corner = 0
+0:2/0/terrains_peering_bit/bottom_side = 0
+0:2/0/terrains_peering_bit/bottom_left_corner = 0
+0:2/0/terrains_peering_bit/left_side = 0
+0:2/0/terrains_peering_bit/top_left_corner = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 1
+1:2/0/terrains_peering_bit/right_side = 1
+1:2/0/terrains_peering_bit/bottom_right_corner = 0
+1:2/0/terrains_peering_bit/bottom_side = 0
+1:2/0/terrains_peering_bit/bottom_left_corner = 0
+1:2/0/terrains_peering_bit/left_side = 1
+1:2/0/terrains_peering_bit/top_left_corner = 1
+1:2/0/terrains_peering_bit/top_side = 1
+1:2/0/terrains_peering_bit/top_right_corner = 1
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 1
+3:2/0/terrains_peering_bit/right_side = 1
+3:2/0/terrains_peering_bit/bottom_right_corner = 0
+3:2/0/terrains_peering_bit/bottom_side = 0
+3:2/0/terrains_peering_bit/bottom_left_corner = 0
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_left_corner = 0
+3:2/0/terrains_peering_bit/top_side = 1
+3:2/0/terrains_peering_bit/top_right_corner = 1
+4:2/0 = 0
+4:2/0/terrain_set = 0
+4:2/0/terrain = 1
+4:2/0/terrains_peering_bit/right_side = 1
+4:2/0/terrains_peering_bit/bottom_right_corner = 0
+4:2/0/terrains_peering_bit/bottom_side = 0
+4:2/0/terrains_peering_bit/bottom_left_corner = 0
+4:2/0/terrains_peering_bit/left_side = 1
+4:2/0/terrains_peering_bit/top_left_corner = 1
+4:2/0/terrains_peering_bit/top_side = 1
+4:2/0/terrains_peering_bit/top_right_corner = 1
+5:2/0 = 0
+5:2/0/terrain_set = 0
+5:2/0/terrain = 1
+5:2/0/terrains_peering_bit/right_side = 0
+5:2/0/terrains_peering_bit/bottom_right_corner = 0
+5:2/0/terrains_peering_bit/bottom_side = 0
+5:2/0/terrains_peering_bit/bottom_left_corner = 0
+5:2/0/terrains_peering_bit/left_side = 1
+5:2/0/terrains_peering_bit/top_left_corner = 1
+5:2/0/terrains_peering_bit/top_side = 1
+5:2/0/terrains_peering_bit/top_right_corner = 0
+6:2/0 = 0
+6:2/0/terrain_set = 0
+6:2/0/terrain = 0
+6:2/0/terrains_peering_bit/right_side = 0
+6:2/0/terrains_peering_bit/bottom_right_corner = 1
+6:2/0/terrains_peering_bit/bottom_side = 1
+6:2/0/terrains_peering_bit/bottom_left_corner = 1
+6:2/0/terrains_peering_bit/left_side = 1
+6:2/0/terrains_peering_bit/top_left_corner = 1
+6:2/0/terrains_peering_bit/top_side = 0
+6:2/0/terrains_peering_bit/top_right_corner = 0
+8:2/0 = 0
+8:2/0/terrain_set = 0
+8:2/0/terrain = 0
+8:2/0/terrains_peering_bit/right_side = 1
+8:2/0/terrains_peering_bit/bottom_right_corner = 1
+8:2/0/terrains_peering_bit/bottom_side = 1
+8:2/0/terrains_peering_bit/bottom_left_corner = 1
+8:2/0/terrains_peering_bit/left_side = 0
+8:2/0/terrains_peering_bit/top_left_corner = 0
+8:2/0/terrains_peering_bit/top_side = 0
+8:2/0/terrains_peering_bit/top_right_corner = 1
+7:2/0 = 0
+7:2/0/terrain_set = 0
+7:2/0/terrain = 0
+7:2/0/terrains_peering_bit/right_side = 0
+7:2/0/terrains_peering_bit/bottom_right_corner = 1
+7:2/0/terrains_peering_bit/bottom_side = 1
+7:2/0/terrains_peering_bit/bottom_left_corner = 1
+7:2/0/terrains_peering_bit/left_side = 0
+7:2/0/terrains_peering_bit/top_left_corner = 0
+7:2/0/terrains_peering_bit/top_side = 0
+7:2/0/terrains_peering_bit/top_right_corner = 0
+8:1/0 = 0
+8:1/0/terrain_set = 0
+8:1/0/terrain = 0
+8:1/0/terrains_peering_bit/right_side = 1
+8:1/0/terrains_peering_bit/bottom_right_corner = 1
+8:1/0/terrains_peering_bit/bottom_side = 0
+8:1/0/terrains_peering_bit/bottom_left_corner = 0
+8:1/0/terrains_peering_bit/left_side = 0
+8:1/0/terrains_peering_bit/top_left_corner = 0
+8:1/0/terrains_peering_bit/top_side = 0
+8:1/0/terrains_peering_bit/top_right_corner = 1
+6:1/0 = 0
+6:1/0/terrain_set = 0
+6:1/0/terrain = 0
+6:1/0/terrains_peering_bit/right_side = 0
+6:1/0/terrains_peering_bit/bottom_right_corner = 0
+6:1/0/terrains_peering_bit/bottom_side = 0
+6:1/0/terrains_peering_bit/bottom_left_corner = 1
+6:1/0/terrains_peering_bit/left_side = 1
+6:1/0/terrains_peering_bit/top_left_corner = 1
+6:1/0/terrains_peering_bit/top_side = 0
+6:1/0/terrains_peering_bit/top_right_corner = 0
+7:0/0 = 0
+7:0/0/terrain_set = 0
+7:0/0/terrain = 0
+7:0/0/terrains_peering_bit/right_side = 0
+7:0/0/terrains_peering_bit/bottom_right_corner = 0
+7:0/0/terrains_peering_bit/bottom_side = 0
+7:0/0/terrains_peering_bit/bottom_left_corner = 0
+7:0/0/terrains_peering_bit/left_side = 0
+7:0/0/terrains_peering_bit/top_left_corner = 1
+7:0/0/terrains_peering_bit/top_side = 1
+7:0/0/terrains_peering_bit/top_right_corner = 1
 
 [sub_resource type="TileSet" id="TileSet_25srq"]
 tile_size = Vector2i(128, 128)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Terrain 1"
+terrain_set_0/terrain_1/color = Color(0.501961, 0.439216, 0.25098, 1)
 sources/1 = SubResource("TileSetScenesCollectionSource_ypjj2")
 sources/2 = SubResource("TileSetAtlasSource_4xj2m")
-sources/3 = SubResource("TileSetAtlasSource_t74ti")
+sources/4 = SubResource("TileSetAtlasSource_1cx70")
 
 [sub_resource type="Theme" id="Theme_k4i23"]
-
-[sub_resource type="Theme" id="Theme_meh32"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_2ovxm"]
-font_size = 32
-font_color = Color(0.952941, 0.113725, 0.0352941, 1)
-outline_size = 3
-shadow_size = 10
-shadow_color = Color(0.215686, 0.215686, 0.215686, 1)
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fok40")
+_turn = 20
 
 [node name="Player" parent="." instance=ExtResource("2_vlods")]
 unique_name_in_owner = true
@@ -73,44 +349,90 @@ unique_name_in_owner = true
 tile_set = SubResource("TileSet_25srq")
 format = 2
 layer_0/name = "Police"
-layer_0/tile_data = PackedInt32Array(196615, 1, 131072, 196608, 1, 131072, 1, 1, 65536)
-layer_1/name = "Outline"
+layer_0/tile_data = PackedInt32Array(-65542, 1, 131072, -65538, 1, 65536, 131067, 1, 65536, -65533, 1, 65536)
+layer_1/name = "background"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
-layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327680, 2, 0, 393215, 2, 0, 327679, 2, 0, 262143, 2, 0, 196607, 2, 0, 131071, 2, 0, 65535, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, 12, 2, 0, 65548, 2, 0, 131084, 2, 0, 196620, 2, 0, 262156, 2, 0, 327692, 2, 0, 327691, 2, 0, 327690, 2, 0, 327689, 2, 0, 327688, 2, 0)
+layer_1/z_index = -2
+layer_1/tile_data = PackedInt32Array(65535, 262148, 1, 131071, 4, 1, 196607, 458756, 1, 262143, 4, 2, 327679, 458756, 1, -1, 131076, 1, -65536, 262148, 1, -65535, 262148, 1, -65534, 65540, 0, -65533, 131076, 1, -65532, 327684, 1, -65531, 4, 2, -65530, 4, 2, -65529, 4, 2, -65528, 4, 2, 262151, 4, 2, 262150, 4, 2, 262149, 458756, 1, 262148, 4, 2, 262147, 4, 2, 262146, 4, 2, 262145, 4, 2, 262144, 458756, 1, 131072, 458756, 1, 65536, 65540, 2, 0, 262148, 1, 65537, 65540, 1, 2, 131076, 1, 3, 262148, 1, 4, 327684, 1, 5, 458756, 1, 6, 458756, 1, 7, 458756, 1, 8, 4, 2, 196610, 4, 2, 196609, 458756, 1, 196608, 458756, 1, 196615, 4, 2, 131079, 4, 2, 131080, 4, 2, 196614, 458756, 1, 131078, 458756, 1, 196613, 458756, 1, 131077, 4, 2, 196612, 4, 2, 131076, 458756, 1, 196611, 458756, 1, 131075, 458756, 1, 131074, 4, 2, 65539, 65540, 1, 65540, 327684, 2, 65541, 458756, 1, 65542, 458756, 1, 65543, 458756, 1, 65544, 4, 2, 131073, 4, 2, 1, 65540, 0, 65538, 262148, 2, -131065, 4, 2, -131066, 4, 2, -131067, 458756, 1, -131068, 327684, 0, -131069, 262148, 0, -131070, 262148, 0, -131071, 262148, 0, -131072, 262148, 0, -65537, 262148, 0, -65538, 262148, 0, -2, 131076, 1, 65534, 262148, 1, 131070, 65540, 2, 196606, 458756, 1, 262142, 458756, 1, 327678, 458756, 1, 327677, 4, 2, 262141, 4, 2, 196605, 458756, 1, 131069, 65540, 2, 65533, 65540, 0, -3, 65540, 0, -65539, 262148, 0, 327676, 4, 2, 262140, 4, 2, 196604, 4, 2, 131068, 4, 1, 65532, 4, 0, -4, 131076, 1, -65540, 262148, 0, -131076, 458756, 1, -131075, 4, 2, -131074, 4, 2, -196607, 458756, 1, -196608, 458756, 1, -131073, 4, 2, -196606, 4, 2, -196605, 458756, 1, -196604, 4, 2, -196602, 4, 2, -196603, 4, 2, -196601, 4, 2, -196600, 458756, 1, -262153, 458756, 1, -262152, 458756, 1, -196616, 4, 2, -196615, 4, 2, -196614, 4, 2, -131077, 4, 2, -262139, 458756, 1, -262138, 4, 2, -327674, 458756, 1, -327673, 4, 2, -327675, 458756, 1, -327676, 458756, 1, -262137, 4, 2, -262136, 458756, 1, 262152, 4, 2, 196616, 4, 2, -131064, 458756, 1, 131066, 196612, 2, 131067, 262148, 2, 131065, 4, 2, -327672, 4, 2, -327677, 458756, 1, -327678, 4, 2, -327679, 4, 2, -327680, 458756, 1, -262145, 4, 2, -262147, 458756, 1, -262146, 458756, 1, -262148, 4, 2, -262149, 458756, 1, -262150, 4, 2, -262151, 458756, 1, -196617, 4, 2, -131081, 458756, 1, -65545, 4, 2, -9, 4, 2, 65527, 458756, 1, 131063, 458756, 1, 196599, 4, 2, 262135, 458756, 1, 327671, 458756, 1, 327672, 4, 2, 327673, 4, 2, 327674, 4, 2, 327675, 4, 2, 262136, 458756, 1, 262137, 458756, 1, 262138, 458756, 1, 262139, 458756, 1, 196603, 4, 2, 196602, 458756, 1, 196601, 4, 2, 196600, 458756, 1, 131064, 458756, 1, -5, 4, 0, -6, 196612, 1, 65530, 196612, 1, 65529, 458756, 1, 65531, 131076, 1, 65528, 458756, 1, -8, 4, 2, -65544, 458756, 1, -131080, 4, 2, -131079, 4, 2, -131078, 4, 2, -65542, 196612, 0, -65543, 4, 2, -65541, 262148, 0, -7, 458756, 1, -196613, 458756, 1, -196612, 4, 2, -196611, 4, 2, -196610, 458756, 1, -196609, 4, 2, -262144, 458756, 1, -262143, 4, 2, -262142, 458756, 1, -262141, 458756, 1, -262140, 4, 2)
 script = ExtResource("4_dr2f0")
 
-[node name="Turn" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("7_d8kai")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-415, -274)
+texture = ExtResource("8_ai5jd")
 
-[node name="Poster" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 48.0
-offset_right = 42.0
-offset_bottom = 71.0
-script = ExtResource("8_yv12t")
+offset_left = -1158.0
+offset_top = 221.0
+offset_right = -711.0
+offset_bottom = 655.0
+texture = ExtResource("11_kumis")
+expand_mode = 3
 
-[node name="GameoverPanel" type="Panel" parent="."]
-unique_name_in_owner = true
-visible = false
+[node name="Turn" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 156
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_d8kai")
+
+[node name="Post" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -753.0
+offset_top = 373.0
+offset_right = -403.0
+offset_bottom = 702.0
+texture = ExtResource("13_ulu5j")
+expand_mode = 2
+
+[node name="Poster" type="Label" parent="Post"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_yv12t")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -1162.0
+offset_top = -656.0
+offset_right = 1156.0
+offset_bottom = 640.0
+
+[node name="GameoverPanel" type="Panel" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 1.00195)
 tooltip_text = "asdf"
 theme = SubResource("Theme_k4i23")
 
-[node name="TextureRect" type="TextureRect" parent="GameoverPanel"]
+[node name="TextureRect" type="TextureRect" parent="Control/GameoverPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,31 +442,24 @@ grow_vertical = 2
 texture = ExtResource("10_vfj1x")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="GameoverPanel"]
-visible = false
-layout_mode = 2
-offset_top = 300.0
-offset_right = 1152.0
-offset_bottom = 348.0
-theme = SubResource("Theme_meh32")
-text = "BUSTED"
-label_settings = SubResource("LabelSettings_2ovxm")
-horizontal_alignment = 1
-
-[node name="GameclearPanel" type="Panel" parent="."]
+[node name="GameclearPanel" type="Panel" parent="Control"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.00195)
 tooltip_text = "asdf"
 theme = SubResource("Theme_k4i23")
 
-[node name="TextureRect" type="TextureRect" parent="GameclearPanel"]
+[node name="TextureRect" type="TextureRect" parent="Control/GameclearPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,14 +469,18 @@ grow_vertical = 2
 texture = ExtResource("11_odxd8")
 expand_mode = 2
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
 [connection signal="gameend" from="." to="." method="_on_gameend"]
 [connection signal="next_state" from="." to="." method="_on_next_state"]
 [connection signal="onchange_poster" from="." to="." method="_on_onchange_poster"]
-[connection signal="onchange_poster" from="." to="Poster" method="_on_main_scene_onchange_poster"]
+[connection signal="onchange_poster" from="." to="Post/Poster" method="_on_main_scene_onchange_poster"]
 [connection signal="onchange_state" from="." to="." method="_on_onchange_state"]
 [connection signal="onchange_state" from="." to="Player" method="_on_main_scene_onchange_state"]
 [connection signal="onchange_state" from="." to="PoliceManager" method="_on_main_scene_onchange_state"]
-[connection signal="onchange_turn" from="." to="Turn" method="_on_main_scene_onchange_turn"]
+[connection signal="onchange_turn" from="." to="." method="_on_onchange_turn"]
+[connection signal="onchange_turn" from="." to="TextureRect/Turn" method="_on_main_scene_onchange_turn"]
 [connection signal="posting" from="Player" to="." method="_on_player_posting"]
 [connection signal="child_entered_tree" from="PoliceManager" to="PoliceManager" method="_on_child_entered_tree"]
 [connection signal="onadd_streetlights" from="PoliceManager" to="." method="_on_police_manager_onadd_streetlights"]

@@ -1,25 +1,25 @@
 [gd_scene load_steps=14 format=3 uid="uid://clwgcv0adx00p"]
 
 [ext_resource type="Script" path="res://scripts/police_officer.gd" id="1_n0pod"]
-[ext_resource type="Texture2D" uid="uid://bbt7ol3a0negx" path="res://police_officer/police_front.png" id="2_0dsfb"]
-[ext_resource type="Texture2D" uid="uid://d3sfvtob3apgn" path="res://police_officer/police_back.png" id="2_0hpei"]
-[ext_resource type="Texture2D" uid="uid://c4nhni5ruufv5" path="res://police_officer/light/police_lightleft.png" id="2_k6pbr"]
-[ext_resource type="Texture2D" uid="uid://b083bpkajrq04" path="res://police_officer/light/police_lightmiddle.png" id="3_k07rp"]
-[ext_resource type="Texture2D" uid="uid://gxhlwijwboou" path="res://police_officer/light/police_lightright.png" id="4_qkjbx"]
-[ext_resource type="Texture2D" uid="uid://c8mfb1rafonn7" path="res://police_officer/police_side.png" id="7_c3t6f"]
+[ext_resource type="Texture2D" uid="uid://bbt7ol3a0negx" path="res://police_officer/police_front.png" id="2_hiige"]
+[ext_resource type="Texture2D" uid="uid://c4nhni5ruufv5" path="res://police_officer/light/police_lightleft.png" id="3_fd654"]
+[ext_resource type="Texture2D" uid="uid://b083bpkajrq04" path="res://police_officer/light/police_lightmiddle.png" id="4_1fvpe"]
+[ext_resource type="Texture2D" uid="uid://gxhlwijwboou" path="res://police_officer/light/police_lightright.png" id="5_cyep8"]
+[ext_resource type="Texture2D" uid="uid://d3sfvtob3apgn" path="res://police_officer/police_back.png" id="7_felth"]
 [ext_resource type="Texture2D" uid="uid://fja662o7egvu" path="res://police_officer/exclaim.png" id="8_ju2vn"]
+[ext_resource type="Texture2D" uid="uid://c8mfb1rafonn7" path="res://police_officer/police_side.png" id="8_rydk2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5fl6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_k6pbr")
+"texture": ExtResource("3_fd654")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_k07rp")
+"texture": ExtResource("4_1fvpe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_qkjbx")
+"texture": ExtResource("5_cyep8")
 }],
 "loop": true,
 "name": &"default",
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_0hpei")]
+"values": [ExtResource("7_felth")]
 }
 
 [sub_resource type="Animation" id="Animation_ijvjr"]
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_0dsfb")]
+"values": [ExtResource("2_hiige")]
 }
 
 [sub_resource type="Animation" id="Animation_pqnwk"]
@@ -68,7 +68,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_c3t6f")]
+"values": [ExtResource("8_rydk2")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mqqun"]
@@ -91,7 +91,8 @@ position = Vector2(256, 0)
 scale = Vector2(1.25, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0dsfb")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_hiige")
 flip_h = true
 
 [node name="Light" type="AnimatedSprite2D" parent="Sprite2D"]
