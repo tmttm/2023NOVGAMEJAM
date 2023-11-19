@@ -96,11 +96,11 @@ func get_lights():
 func move_polices():
 	if is_player_visible or remain_target > 0:
 		move_to_player()
-		move_to_player()
 		remain_target -= 1
 	else:
 		move_random()
-	# # TODO: move polices
+
+	# TODO: move polices
 	_next_stage()
 
 func move_random():
@@ -136,7 +136,6 @@ func move_to_player():
 			p.turn(true)
 		else:
 			p.turn(rng.randf() < 0.5)
-			
 		
 func move_cell(from: Vector2i, to:Vector2i):
 	var idx = tiles.find(from)
