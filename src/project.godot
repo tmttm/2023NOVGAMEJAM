@@ -13,7 +13,8 @@ config_version=5
 config/name="2023novgamejam"
 run/main_scene="res://screen/start_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://player/player_front.png"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
