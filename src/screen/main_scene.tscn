@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b75ctomlqpu57"]
+[gd_scene load_steps=19 format=3 uid="uid://b75ctomlqpu57"]
 
 [ext_resource type="Script" path="res://scripts/screen/main_scene.gd" id="1_fok40"]
 [ext_resource type="PackedScene" uid="uid://b3puujsn6r2u1" path="res://player/player.tscn" id="2_vlods"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://tqmblg8ssyq7" path="res://streetlight/streetlight.tscn" id="4_3b6o2"]
 [ext_resource type="Script" path="res://scripts/police_manager.gd" id="4_dr2f0"]
 [ext_resource type="Texture2D" uid="uid://br6ixw0pnb8bu" path="res://icon.svg" id="4_kyi7e"]
+[ext_resource type="Texture2D" uid="uid://sh3u776wnqcs" path="res://map/road_sheet.png" id="6_ammkd"]
 [ext_resource type="Script" path="res://scripts/screen/ui/turn.gd" id="7_d8kai"]
 [ext_resource type="Script" path="res://scripts/screen/ui/poster.gd" id="8_yv12t"]
+[ext_resource type="Texture2D" uid="uid://ovurub75dth0" path="res://screen/fail_scene.png" id="10_vfj1x"]
+[ext_resource type="Texture2D" uid="uid://bp1b7cyw2xifp" path="res://screen/clear_scene.png" id="11_odxd8"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ypjj2"]
 scenes/1/scene = ExtResource("3_6rrem")
@@ -19,10 +22,27 @@ texture_region_size = Vector2i(128, 128)
 use_texture_padding = false
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t74ti"]
+texture = ExtResource("6_ammkd")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_25srq"]
 tile_size = Vector2i(128, 128)
 sources/1 = SubResource("TileSetScenesCollectionSource_ypjj2")
 sources/2 = SubResource("TileSetAtlasSource_4xj2m")
+sources/3 = SubResource("TileSetAtlasSource_t74ti")
 
 [sub_resource type="Theme" id="Theme_k4i23"]
 
@@ -53,7 +73,7 @@ unique_name_in_owner = true
 tile_set = SubResource("TileSet_25srq")
 format = 2
 layer_0/name = "Police"
-layer_0/tile_data = PackedInt32Array(7, 1, 65536, 196615, 1, 131072, 196608, 1, 131072)
+layer_0/tile_data = PackedInt32Array(196615, 1, 131072, 196608, 1, 131072, 1, 1, 65536)
 layer_1/name = "Outline"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -90,7 +110,18 @@ scale = Vector2(1, 1.00195)
 tooltip_text = "asdf"
 theme = SubResource("Theme_k4i23")
 
+[node name="TextureRect" type="TextureRect" parent="GameoverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_vfj1x")
+expand_mode = 2
+
 [node name="Label" type="Label" parent="GameoverPanel"]
+visible = false
 layout_mode = 2
 offset_top = 300.0
 offset_right = 1152.0
@@ -100,8 +131,32 @@ text = "BUSTED"
 label_settings = SubResource("LabelSettings_2ovxm")
 horizontal_alignment = 1
 
+[node name="GameclearPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.00195)
+tooltip_text = "asdf"
+theme = SubResource("Theme_k4i23")
+
+[node name="TextureRect" type="TextureRect" parent="GameclearPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_odxd8")
+expand_mode = 2
+
 [connection signal="gameend" from="." to="." method="_on_gameend"]
 [connection signal="next_state" from="." to="." method="_on_next_state"]
+[connection signal="onchange_poster" from="." to="." method="_on_onchange_poster"]
 [connection signal="onchange_poster" from="." to="Poster" method="_on_main_scene_onchange_poster"]
 [connection signal="onchange_state" from="." to="." method="_on_onchange_state"]
 [connection signal="onchange_state" from="." to="Player" method="_on_main_scene_onchange_state"]
