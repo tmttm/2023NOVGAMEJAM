@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://b3puujsn6r2u1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1r5x7"]
-[ext_resource type="Texture2D" uid="uid://bxe44wsmpcgkv" path="res://player/player_front.png" id="2_6bwaw"]
-[ext_resource type="Texture2D" uid="uid://djtfr55ifv81o" path="res://player/player_back.png" id="2_eknpw"]
-[ext_resource type="Texture2D" uid="uid://cdmxvlaqs7mwh" path="res://player/player_side.png" id="3_3bu02"]
-[ext_resource type="Texture2D" uid="uid://kemq5qqf8oew" path="res://player/player_moving.png" id="3_c507g"]
+[ext_resource type="Texture2D" uid="uid://bxe44wsmpcgkv" path="res://player/player_front.png" id="2_gdpl4"]
+[ext_resource type="Texture2D" uid="uid://cdmxvlaqs7mwh" path="res://player/player_side.png" id="3_gl50u"]
+[ext_resource type="Texture2D" uid="uid://kemq5qqf8oew" path="res://player/player_moving.png" id="4_s1q1r"]
+[ext_resource type="Texture2D" uid="uid://djtfr55ifv81o" path="res://player/player_back.png" id="5_kux0o"]
 
 [sub_resource type="Animation" id="Animation_usqjc"]
 resource_name = "side"
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_3bu02")]
+"values": [ExtResource("3_gl50u")]
 }
 
 [sub_resource type="Animation" id="Animation_2eqex"]
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_c507g")]
+"values": [ExtResource("4_s1q1r")]
 }
 
 [sub_resource type="Animation" id="Animation_1ju2f"]
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_eknpw")]
+"values": [ExtResource("5_kux0o")]
 }
 
 [sub_resource type="Animation" id="Animation_f8ybk"]
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_6bwaw")]
+"values": [ExtResource("2_gdpl4")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vmv6l"]
@@ -78,7 +78,8 @@ _data = {
 script = ExtResource("1_1r5x7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_6bwaw")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_gdpl4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")

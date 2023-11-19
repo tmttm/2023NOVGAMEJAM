@@ -13,11 +13,15 @@ config_version=5
 config/name="2023novgamejam"
 run/main_scene="res://screen/start_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://player/player_front.png"
 
 [autoload]
 
 Constant="*res://scripts/constant.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 

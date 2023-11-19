@@ -18,19 +18,23 @@ var streetlights = {}
 
 var astar_grid: AStarGrid2D
 var remain_target = 0
-
-func _ready():
+func _init():
 	astar_grid = AStarGrid2D.new()
-	astar_grid.size = Vector2i(32,32)
+	astar_grid.region = Rect2i(-16,-16,32,32)
 	astar_grid.cell_size = Vector2i(128, 128)
 	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
 	astar_grid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER 
 	astar_grid.update()
 
+func _ready():
+
 	rng.seed = 42
 
-	tiles.append_array(get_used_cells_by_id(1, 2))
+	for i in get_used_cells_by_id(1, 4):
+		var id = get_cell_tile_data(1, i).terrain
+		if id == 0:
+			tiles.append(i)
 
 func _on_main_scene_onchange_state(state):
 	if state == Constant.STATE_INIT:
@@ -43,7 +47,6 @@ func _on_main_scene_onchange_state(state):
 		pass
 	
 func recognize():
-	# TODO: is in light in player
 	for p in polices:
 		var player_pos = player.get_map_position()
 		var police_front_pos = p.get_front_pos(self)
@@ -100,7 +103,6 @@ func move_polices():
 	else:
 		move_random()
 
-	# TODO: move polices
 	_next_stage()
 
 func move_random():
